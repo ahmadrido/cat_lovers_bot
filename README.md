@@ -37,7 +37,7 @@ Bot Telegram berbasis AI untuk menjawab pertanyaan seputar kucing menggunakan RA
 ### 1. Clone dan Setup Environment
 
 ```powershell
-cd "c:\xampp\htdocs\kucing array\chatbot-catlovers"
+git clone https://github.com/ahmadrido/cat_lovers_bot.git
 ```
 
 ### 2. Setup Google API Key
