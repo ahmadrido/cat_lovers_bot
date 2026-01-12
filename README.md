@@ -227,7 +227,10 @@ Educational Project - 2025
 
 ## 👨‍💻 Author
 
-Created by Array Team
+Created by Array Team (kelompok 5)
+Nur Rizqi Tegar Wibawa
+Ahmad Rido Kamaludin
+Haidir Arraysach Saputra
 
 ## 🙏 Acknowledgments
 
