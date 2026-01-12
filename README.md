@@ -215,7 +215,8 @@ chatbot-catlovers/
 ├── ingest.py           # Data ingestion & embeddings
 ├── docker-compose.yml  # Docker configuration
 ├── schema.sql          # Database schema
-├── data.py            # Data helper (jika ada)
+├── requirements.txt     # Dependensi
+├── data.py            # Data helper
 ├── test_db.py         # Database testing
 ├── tes_api.py         # API testing
 └── README.md          # Documentation
