@@ -1,0 +1,4 @@
+python-telegram-bot
+asyncpg
+psycopg2-binary
+langchain-google-genai

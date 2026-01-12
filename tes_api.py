@@ -1,6 +1,6 @@
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 
-API_KEY = "AIzaSyDptxjmiSlBpJfrnIiRbcKxOO-ZWJ3xz-I"
+API_KEY = "AIzaSyBrYaHxfT0QOIgqVwUfeheOxgHE3xYyvZQ"
 
 try:
     print("Sedang mencoba menghubungi Google AI...")

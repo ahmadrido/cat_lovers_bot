@@ -1,6 +1,7 @@
 import logging
+import os
 from telegram import Update
-from telegram.ext import ApplicationBuilder, ContextTypes, MessageHandler, filters
+from telegram.ext import ApplicationBuilder, ContextTypes, MessageHandler, CommandHandler, filters
 from processor import get_answer
 
 logging.basicConfig(
@@ -9,6 +10,31 @@ logging.basicConfig(
 )
 
 TOKEN = "8401369464:AAEbjoBYd8G3SokWlbaOim3EdRX03zxBlQE"
+
+async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    """Handle /start command"""
+    welcome_message = """
+Halo! 👋 Selamat datang di **CatLovers Bot** 🐱
+
+Saya adalah chatbot yang siap membantu Anda dengan berbagai informasi tentang kucing, seperti:
+🍽️ Makanan & Nutrisi
+💉 Kesehatan & Vaksinasi
+🎾 Perilaku & Pelatihan
+🧼 Panduan Perawatan
+🐈 Jenis-jenis Kucing
+🏥 Penyakit & Gejala
+
+Tanya apa saja tentang kucing, dan saya akan bantu jawab dengan ramah! 🐾
+
+Contoh pertanyaan:
+• "Makanan apa yang berbahaya untuk kucing?"
+• "Kapan kucing harus divaksin?"
+• "Kenapa kucingku suka mencakar sofa?"
+• "Bagaimana cara merawat bulu kucing?"
+
+Silakan tanya sekarang! 😊
+"""
+    await update.message.reply_text(welcome_message, parse_mode='Markdown')
 
 async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE)-> None:
     """Handle incoming text messages from users."""
@@ -37,7 +63,9 @@ async def handle_photo(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
 
 if __name__ == '__main__':
     app = ApplicationBuilder().token(TOKEN).build()
-    
+    # Handler untuk /start command
+    # app.add_handler(MessageHandler(filters.COMMAND & filters.Regex(r'^/start$'), start_command))
+    app.add_handler(CommandHandler("start", start_command))
     # Handler untuk teks
     app.add_handler(MessageHandler(filters.TEXT & (~filters.COMMAND), handle_text))
     # Handler untuk foto (Identifikasi Jenis)
