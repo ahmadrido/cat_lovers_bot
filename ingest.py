@@ -7,7 +7,7 @@ import sys
   
 
 # 1. Konfigurasi
-API_KEY = "AIzaSyBrYaHxfT0QOIgqVwUfeheOxgHE3xYyvZQ"
+API_KEY = os.getenv("GOOGLE_API_KEY")
 DB_PARAMS = "postgresql://array:123456@127.0.0.1:5435/catlovers_db"
 
 embeddings_model = GoogleGenerativeAIEmbeddings(model="models/text-embedding-004", google_api_key=API_KEY)

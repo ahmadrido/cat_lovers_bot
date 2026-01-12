@@ -9,7 +9,7 @@ logging.basicConfig(
     level=logging.INFO
 )
 
-TOKEN = "8401369464:AAEbjoBYd8G3SokWlbaOim3EdRX03zxBlQE"
+TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')
 
 async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     """Handle /start command"""

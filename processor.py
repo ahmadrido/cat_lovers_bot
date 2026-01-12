@@ -1,10 +1,11 @@
+import os
 import asyncpg
 import json
 import re
 from langchain_google_genai import GoogleGenerativeAIEmbeddings, ChatGoogleGenerativeAI
 
 # Konfigurasi
-API_KEY ="AIzaSyBrYaHxfT0QOIgqVwUfeheOxgHE3xYyvZQ"
+API_KEY = os.getenv("GOOGLE_API_KEY")
 DB_PARAMS = "postgresql://array:123456@127.0.0.1:5435/catlovers_db"
 
 def clean_markdown(text: str) -> str:
